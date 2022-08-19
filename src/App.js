@@ -1,20 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
-import {Route, Routes, Redirect} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 
 import LoginForm from './components/Login';
+import SiteHeader from './components/SiteHeader';
+import LandingPage from './components/LandingPage';
 
-import axios from 'axios';
+import './css/App.css'
 
 const App = (props) => {
   return (
     <div>
-      <nav className="head-navbar">
-        <span><h1>Weeb Central</h1></span>
+      <nav>
+        <SiteHeader />
       </nav>
-      <div className='container'>
+      <div>
         <Routes>
           <Route path='/login' element={<LoginForm/>} />
+          <Route path='/' element={<LandingPage/>} />
         </Routes>
       </div>
     </div>
