@@ -8,40 +8,42 @@ const LoginForm = () => {
         password: ''
     }
 
-    const [newLogin, setNewLogin] = useState(initialLoginForm);
+    const [login, setLogin] = useState(initialLoginForm);
 
     const handleChange = evt => {
-        setNewLogin({
-            ...newLogin,
+        // console.log(evt.target.value);
+        setLogin({
+            ...login,
             [evt.target.name]: evt.target.value
         });
     }
     const onSubmit = evt => {
-        evt.preventDevault();
-        const form = evt.target;
-        const newLogin = {
-            username: form.username.value,
-            password: form.password.value
-        };
-        
+        console.log(URL);
+        evt.preventDefault();
+        const newForm = {
+            username: login.username,
+            password: login.password
+        }
+        console.log(newForm);
+        setLogin(initialLoginForm);
     }
-console.log(`${URL}login`);
+
    return (
     <div className="login">
-        <form>
+        <form onSubmit={onSubmit}>
             <div className="header">
                 <h3>Login</h3>
             </div>
             <div className="form-group">
                 <label>Username </label>
-                <input type='text'/>
+                <input type='text' name='username' value={login.username} onChange={handleChange}/>
             </div>
             <div className="form-group">
                 <label>Password </label>
-                <input type='password' />
+                <input type='password' name='password' value={login.password} onChange={handleChange}/>
             </div>
-            <div className = "submit">
-                <button>Submit</button>
+            <div className="submit">
+                <input type='submit' />
             </div>
 
         </form>
