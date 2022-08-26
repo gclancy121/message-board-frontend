@@ -18,14 +18,13 @@ const LoginForm = () => {
         });
     }
     const onSubmit = evt => {
-        console.log(URL);
         evt.preventDefault();
         const newForm = {
             username: login.username,
             password: login.password
         }
-        console.log(newForm);
-        setLogin(initialLoginForm);
+    //    axios.post(URL, )
+    //     setLogin(initialLoginForm);
     }
 
    return (

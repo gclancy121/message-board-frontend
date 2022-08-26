@@ -1,6 +1,44 @@
+#landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+/* images */
+#sachi {
+    width: 250px;
+    height: 250px;
+    padding: 1%;
+}
+#holo {
+    width: 250px;
+    height: 250px;
+    padding: 1%;
+}
+#asuna{
+    width: 250px;
+    height: 250px;
+    padding: 1%;
+}
+.images {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* text */
 .welcome-text {
+    text-align: center;
     font-family: "Comic Sans MS"
 }
-.copyright {
-    font-size: 6px
+.login-info {
+    display: flex;
+    justify-content: space-evenly;
 }
+.copyright {
+    font-size: 0.65rem;
+}
+
+
+
