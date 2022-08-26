@@ -1,2 +1,12 @@
 # message-board-frontend
-The frontend component of the message board I'm building. This will allow users to sign in to the website, and automatically send the JWT to the backend server and let them use the waifu functionalities of the API I created. 
+The frontend component of the message board I'm building! Built using React, ReactDOM, React Router, and many other packages. 
+All packages can be found in the package.json.
+
+If you find any bugs in this software, please open an issue ticket on the github: https://github.com/gclancy121/message-board-frontend
+
+REQUIRED FOR THIS TO RUN PROPERLY:
+For now, you *must* download the API I created specifically for this application. It can be found here: https://github.com/gclancy121/message-board-api
+
+HOW TO START: 
+
+Go to the terminal, and simply type "npm start". The app should start without issue. 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import URL from '../url';
 
 const LoginForm = () => {
@@ -9,9 +10,9 @@ const LoginForm = () => {
     }
 
     const [login, setLogin] = useState(initialLoginForm);
+    const navigate = useNavigate();
 
     const handleChange = evt => {
-        // console.log(evt.target.value);
         setLogin({
             ...login,
             [evt.target.name]: evt.target.value
@@ -23,10 +24,14 @@ const LoginForm = () => {
             username: login.username,
             password: login.password
         }
-    //    axios.post(URL, )
-    //     setLogin(initialLoginForm);
+       axios.post(`${URL}/auth/login`, newForm).then(res => {
+        const data = res.data;
+        localStorage.setItem('authorization', data.token);
+        localStorage.setItem('message', data.message);
+        setLogin(initialLoginForm)
+        navigate('/profile')
+        })
     }
-
    return (
     <div className="login">
         <form onSubmit={onSubmit}>

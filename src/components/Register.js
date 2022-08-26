@@ -1,13 +1,16 @@
 import React, {useState} from "react";
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import URL from '../url';
 
 const RegisterForm = () => {
     const initialRegisterForm = {
         username: '',
-        password: ''
+        password: '',
+        message: ''
     }
     const [register, setRegister] = useState(initialRegisterForm);
+    const [isRegistered, setIsRegistered] = useState(false);
 
     const handleChange = evt => {
         setRegister({
@@ -21,12 +24,33 @@ const RegisterForm = () => {
             username: register.username,
             password: register.password
         }
-        // axios.post(`${URL}/register`, newUser).then(res => {
-        //     console.log(res);
-        // })
+        axios.post(`${URL}/auth/register`, newUser).then(res => {
+           setRegister({
+            ...initialRegisterForm,
+            message: res.data.message
+           });
+           setIsRegistered(true);
+        }).catch(err => {
+            setRegister({
+                ...register,
+                message: err.response.data.message});
+        })
     }
+
+    function LoginButton() {
+        if (isRegistered) {
+            return <h3>Click <Link to='/login'>here </Link>to log in.</h3>
+        } else {
+            return <></>
+        }
+    }
+
     return (
         <div className="register">
+            <div className="message">
+                <h2>{register.message}</h2>
+                <LoginButton />
+            </div>
             <form onSubmit={onSubmit}>
                 <div className='header'>
                     <h3>Register</h3>
