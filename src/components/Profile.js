@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 
@@ -10,7 +10,8 @@ const Profile = () => {
     const navigate = useNavigate();
 
     function logout() {
-        navigate('/logout');
+        localStorage.clear();
+        window.location.reload();
     }
     return (
         <div className="container">

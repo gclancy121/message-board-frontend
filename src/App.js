@@ -9,6 +9,7 @@ import SiteHeader from './components/SiteHeader';
 import LandingPage from './components/LandingPage';
 import RegisterForm from './components/Register';
 import Profile from './components/Profile';
+import AllWaifus from './components/waifus/allWaifus';
 
 import './css/App.css'
 
@@ -25,6 +26,7 @@ const App = (props) => {
           <Route path='/register' element={<RegisterForm/>} />
           <Route element={<PrivateRoutes />}>
             <Route element={<Profile />} path='/profile'/>
+            <Route element={<AllWaifus />} path='/waifus' exact/>
           </Route>
         </Routes>
       </div>

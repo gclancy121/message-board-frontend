@@ -27,10 +27,12 @@ const LoginForm = () => {
         }
        axios.post(`${URL}/auth/login`, newForm).then(res => {
         const data = res.data;
+        console.log(data.message);
         localStorage.setItem('username', newForm.username);
         localStorage.setItem('authorization', data.token);
         localStorage.setItem('message', data.message);
         setLogin(initialLoginForm);
+        setLoggedIn(true);
         }).catch(err => {
             const error = err.response.data.message;
             setLogin({
@@ -38,7 +40,6 @@ const LoginForm = () => {
                 error: error
             })
         })
-        setLoggedIn(true);
     }
 
     function LoggedInButton() {

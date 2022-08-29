@@ -9,14 +9,6 @@ const SiteHeader = () => {
     function forceUpdate() {
        setCount(count + 1);
     }
-
-    // function checkLoggedIn(evt) {
-    //     forceUpdate();
-    //     if (state == null) {
-    //         evt.preventDefault();
-    //         alert("You've gotta be logged in to access that, chief!")
-    //     } 
-    // }
     const [count, setCount] = useState(0);
 
     return (<div className = "site-header">
@@ -27,6 +19,7 @@ const SiteHeader = () => {
         <div className='row'>
             <Link to='/' onClick={forceUpdate} className='button'>Home</Link>
             <Link to='/profile' onClick={forceUpdate} className='button'>Profile</Link>
+            <Link to='/waifus' onClick={forceUpdate} className="button">Waifus</Link>
         </div>
     </div>)
 }
