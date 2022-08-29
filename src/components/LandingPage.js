@@ -24,7 +24,23 @@ function LandingPage () {
         </div>
         <div className='site-info'>
             <h2>So what kinds of things can you expect to do on this website?</h2>
-            <p>This website was designed to be a general message board. While you're here, you can talk about anything anime related - your favorite shows, your least favorite shows, </p>
+                <p>This website was designed to be a general message board. While you're here, you can talk about anything anime related - your favorite shows, your least favorite shows, or even vtubers, if you're in to those as well.
+                For now, this is an extremely boring landing page, because I haven't really decided on all of the functionalities yet. I know there will be a message board element, and there will also be an element that allows you to add waifus to the databse.
+                For now, enjoy what little there really is to do in this admittedly bare-bones app - Don't worry, I'm working on it! Check the changelog for more info.
+                </p>
+        </div>
+        <div className="changelog">
+        <h2>Changelog:</h2>
+            <h3>I'm unsure if websites really do this, but for now I'll do this as a way for myself to help keep track of what changes have been made. </h3>
+            <h4>Most recent changes:</h4>
+            <p>Version: Alpha</p>
+            <ul>
+                <li>Added login functionality</li>
+                <li>Changed the auth to actually work as intended</li> 
+                <li>Added waifu section, doesn't currently go anywhere but that will change</li>
+                <li>Considered updating the CSS, I'll dedicate tomorrow to messing around in CSS because it's a pain</li>
+                <li>Began work on the waifu section</li>
+            </ul>
         </div>
         <p className='copyright'>All images are not my own and are found courtesy of Google.</p>
     </div>
