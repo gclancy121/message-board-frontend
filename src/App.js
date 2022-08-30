@@ -11,6 +11,7 @@ import RegisterForm from './components/auth/Register';
 import Profile from './components/auth/Profile';
 import AllWaifus from './components/waifus/allWaifus';
 import AccountSettings from './components/auth/AccountSettings';
+import AddWaifu from './components/waifus/addWaifu';
 
 import './css/App.css'
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
+            <Route element={<AddWaifu />} path='/waifus/add-waifu' />
           </Route>
         </Routes>
       </div>

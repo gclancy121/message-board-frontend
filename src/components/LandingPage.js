@@ -42,7 +42,7 @@ function LandingPage () {
                 <li>Added a link between the login and register pages for quicker access, can't believe I didn't add that at first</li>
                 <li>Organized files a bit, was getting a bit too unorganized</li>
                 <li>Added & reorganized endpoints in API, now they don't suck </li>
-                <li>You can now update your profile in the account settings page - not the picture though, unsure of how to get it to work how I want.</li>
+                <li>You can now update your profile in the account settings page. Picture update setup is <strong>not</strong> permanent. </li>
             </ul>
             <p>Version: Pre-Alpha</p>
             Date: 8/29/30
