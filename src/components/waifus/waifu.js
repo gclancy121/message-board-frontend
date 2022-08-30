@@ -1,13 +1,23 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import URL from '../../url';
+import React, {useState} from "react";
 
 const Waifu = (props) => {
-    const [waifu, setWaifu] = useState('');
+    const {waifu} = props;
+    const [isHidden, setIsHidden] = useState(true);
+    
+    function showInfo () {
+        setIsHidden(!isHidden);
+    }
 
-    const {id} = useParams();
-
-    useEffect(() => {
-        axios.get(`${URL}/waifus/`)
-    })
+    return (
+        <div className="waifu">
+            {waifu.waifu_name} 
+            <button onClick={showInfo}>Click here to load more info</button>
+            <div className="hidden-info" >
+                {!isHidden && <p>{waifu.waifu_description}</p>}
+            </div>
+            
+        </div>
+    )
 }
+
+export default Waifu;

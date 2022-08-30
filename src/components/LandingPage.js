@@ -33,7 +33,19 @@ function LandingPage () {
         <h2>Changelog:</h2>
             <h3>I'm unsure if websites really do this, but for now I'll do this as a way for myself to help keep track of what changes have been made. </h3>
             <h4>Most recent changes:</h4>
-            <p>Version: Alpha</p>
+            <p>Version: Pre-Alpha</p>
+            Date: 8/30/30
+            <ul>
+                <li>Got the waifu section sorta working</li>
+                <li>Yeah not doing CSS today since a friend wants to see the site in all it's jank glory</li>
+                <li>Gotta implement a search feature for the waifu section, this can get very out of hand very very quickly</li>
+                <li>Added a link between the login and register pages for quicker access, can't believe I didn't add that at first</li>
+                <li>Organized files a bit, was getting a bit too unorganized</li>
+                <li>Added account deletion & other endpoints to API </li>
+                <li>Working on getting a settings page up with working account deletion</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
+            Date: 8/29/30
             <ul>
                 <li>Added login functionality</li>
                 <li>Changed the auth to actually work as intended</li> 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import URL from '../url';
+import URL from '../../utils/url';
 
 const LoginForm = () => {
     const initialLoginForm = {
@@ -71,7 +71,9 @@ const LoginForm = () => {
             <div className="submit">
                 <input type='submit' />
             </div>
-
+            <div className="form-group">
+                <p>Not yet registered? Register <Link to='/register'>here.</Link></p>
+            </div>
         </form>
 
     </div>

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import URL from '../url';
+import URL from '../../utils/url';
 
 const RegisterForm = () => {
     const initialRegisterForm = {
@@ -55,7 +55,7 @@ const RegisterForm = () => {
                 <div className='header'>
                     <h3>Register</h3>
                 </div>
-                <div className="form=group">
+                <div className="form-group">
                     <label>Username </label>
                     <input type='text' name='username' value={register.username} onChange={handleChange} />
                 </div>
@@ -65,6 +65,9 @@ const RegisterForm = () => {
                 </div>
                 <div className="submit">
                     <input type='submit' />
+                </div>
+                <div className="form-group">
+                    <p>Already registered? Log in <Link to='/login'>here.</Link></p>
                 </div>
             </form>
         </div>

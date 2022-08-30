@@ -1,14 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-import "../css/Profile.css";
+import "../../css/Profile.css";
 const Profile = () => {
     const username = localStorage.getItem('username');
     const message = localStorage.getItem('message');
+
+    const navigate = useNavigate();
     
     function logout() {
         localStorage.clear();
         window.location.reload();
+    }
+    
+    function settings() {
+        navigate(`/settings`)
     }
 
     //replace hard coded info with stateful info once DB is created for it
@@ -25,6 +32,7 @@ const Profile = () => {
                 <p>Favorite waifu: N/A</p>
             </div>
             <button onClick={logout}>Logout</button>
+            <button onClick={settings}>Account Settings</button>
         </div>
     )
 }
