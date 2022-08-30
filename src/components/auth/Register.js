@@ -24,7 +24,7 @@ const RegisterForm = () => {
             username: register.username,
             password: register.password
         }
-        axios.post(`${URL}/auth/register`, newUser).then(res => {
+        axios.post(`${URL}/users/register`, newUser).then(res => {
            setRegister({
             ...initialRegisterForm,
             message: res.data.message

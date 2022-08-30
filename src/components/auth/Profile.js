@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import URL from '../../utils/url';
 
 
 import "../../css/Profile.css";
 const Profile = () => {
     const username = localStorage.getItem('username');
-    const message = localStorage.getItem('message');
+    const welcome = localStorage.getItem('message');
+    const [profile, setProfile] = useState({});
+    const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get(`${URL}/users/${username}`).then(res => {
+            setProfile(res.data);
+        })
+        setMessage(welcome);
+        localStorage.removeItem('message');
+    }, [])
     
     function logout() {
         localStorage.clear();
@@ -17,8 +29,7 @@ const Profile = () => {
     function settings() {
         navigate(`/settings`)
     }
-
-    //replace hard coded info with stateful info once DB is created for it
+    //replace hard coded posts when DB created
     return (
         <div className="container">
             <div className='message'>
@@ -26,10 +37,11 @@ const Profile = () => {
             </div>
             <div className='profile'>
                 <h3>About Me</h3>
-                <img id="profile-picture" src= "https://i.pinimg.com/736x/ba/a2/4e/baa24e0fbad55140f9103dcfc44894b0.jpg"/>
+                <img id="profile-picture" src={profile.profile_picture}/>
                 <p>Username: {username}</p>
                 <p>Posts: 0</p>
-                <p>Favorite waifu: N/A</p>
+                <p>Favorite waifu: {profile.fav_waifu}</p>
+                <p>About Me: {profile.about_me}</p>
             </div>
             <button onClick={logout}>Logout</button>
             <button onClick={settings}>Account Settings</button>

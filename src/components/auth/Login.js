@@ -25,9 +25,8 @@ const LoginForm = () => {
             username: login.username,
             password: login.password
         }
-       axios.post(`${URL}/auth/login`, newForm).then(res => {
+       axios.post(`${URL}/users/login`, newForm).then(res => {
         const data = res.data;
-        console.log(data.message);
         localStorage.setItem('username', newForm.username);
         localStorage.setItem('authorization', data.token);
         localStorage.setItem('message', data.message);

@@ -4,6 +4,9 @@ All packages can be found in the package.json.
 
 This is currently not anywhere close to done, *especially* in the styling. I'm focusing on the functionality over the look for now, but I will make this no longer look like it came from 1998.
 
+Changelog: 
+For now, a changelog exists on LandingPage.js, so when you launch the server you should be able to see a changelog of what I've been working on recently. 
+
 If you find any bugs in this software, please open an issue ticket on the github: https://github.com/gclancy121/message-board-frontend
 
 REQUIRED FOR THIS TO RUN PROPERLY:
