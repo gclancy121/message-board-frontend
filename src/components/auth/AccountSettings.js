@@ -34,6 +34,7 @@ function AccountSettings() {
             const newProfile = res.data;
             setProfile(newProfile);
             setSuccess(true);
+            localStorage.setItem('username', newProfile.username);
         }).catch(err => console.log(err));
        
     }
@@ -66,11 +67,12 @@ function AccountSettings() {
                 </div>
                 <div className="settings-container">
                     <h3>Profile Picture</h3>
-                    <p>I'll implement letting you change your profile pic later. For now, you're stuck with what you have.</p>
+                    <p>Must be a URL to another website. It won't error yet, but I'll be nice for now.</p>
+                    <input type='text' name='profile_picture' onChange={handleChange} value={profile.profile_picture} />
                 </div>
                 <div className="settings-container">
                     <h3>Username</h3>
-                    <input type='text' name='fav_waifu' onChange={handleChange} value={profile.username} />
+                    <input type='text' name='username' onChange={handleChange} value={profile.username} />
                 </div>
                 <button>Submit Changes</button>
             </form>
