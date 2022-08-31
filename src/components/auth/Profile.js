@@ -32,7 +32,7 @@ const Profile = () => {
     //replace hard coded posts when DB created
     return (
         <div className="container">
-            <div className='message'>
+            <div className='welcome-message'>
                 <h2>{message}</h2>
             </div>
             <div className='profile'>

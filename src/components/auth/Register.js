@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import URL from '../../utils/url';
 
+import '../../css/auth/Register.css';
 const RegisterForm = () => {
     const initialRegisterForm = {
         username: '',
@@ -46,31 +47,39 @@ const RegisterForm = () => {
     }
 
     return (
-        <div className="register">
+        <>
             <div className="message">
                 <h2>{register.message}</h2>
                 <LoginButton />
             </div>
-            <form onSubmit={onSubmit}>
-                <div className='header'>
-                    <h3>Register</h3>
+            <div className="register-container">
+                <form onSubmit={onSubmit}>
+                    <div className='header'>
+                        <h3>Register</h3>
+                    </div>
+                    <div className="form-group">
+                        <label>Username </label>
+                        <input type='text' name='username' id='username-register' value={register.username} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Password </label>
+                        <input type='password' name='password' id='password-register' value={register.password} onChange={handleChange} />
+                    </div>
+                    <div className="submit">
+                        <input type='submit' id='submit-button' />
+                    </div>
+                    <div className="login-link">
+                        <p>Already registered? Log in <Link to='/login'>here.</Link></p>
+                    </div>
+                </form>
+                <div className="fluff">
+                    <h2>Welcome to Weeb Central!</h2>
+                    <p>I'm glad you decided to come and give us a visit. This site is very very janky right now - I know that. I'm working on it.
+                        But I'm only one person and I can only do so much in one day - I hope you enjoy my site regardless!
+                    </p>
                 </div>
-                <div className="form-group">
-                    <label>Username </label>
-                    <input type='text' name='username' value={register.username} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                    <label>Password </label>
-                    <input type='password' name='password' value={register.password} onChange={handleChange} />
-                </div>
-                <div className="submit">
-                    <input type='submit' />
-                </div>
-                <div className="form-group">
-                    <p>Already registered? Log in <Link to='/login'>here.</Link></p>
-                </div>
-            </form>
-        </div>
+            </div>
+        </>
     )
 }
 

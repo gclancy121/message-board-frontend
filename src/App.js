@@ -2,16 +2,23 @@ import React from 'react';
 
 import {Route, Routes} from 'react-router-dom';
 
-
+//PrivateRoutes
 import PrivateRoutes from './utils/PrivateRoutes';
+//Profile related routes
+import Profile from './components/auth/Profile';
+import AccountSettings from './components/auth/AccountSettings';
+//Waifu related routes
+import AllWaifus from './components/waifus/allWaifus';
+import AddWaifu from './components/waifus/addWaifu';
+
+//Registration & Login
 import LoginForm from './components/auth/Login';
+import RegisterForm from './components/auth/Register';
+
+//Landing Pages & Header
 import SiteHeader from './components/SiteHeader';
 import LandingPage from './components/LandingPage';
-import RegisterForm from './components/auth/Register';
-import Profile from './components/auth/Profile';
-import AllWaifus from './components/waifus/allWaifus';
-import AccountSettings from './components/auth/AccountSettings';
-import AddWaifu from './components/waifus/addWaifu';
+import Concern from './components/non-user-actions/Concern';
 
 import './css/App.css'
 
@@ -26,6 +33,7 @@ const App = () => {
           <Route path='/' element={<LandingPage/>} />
           <Route path='/login' element={<LoginForm/>} />
           <Route path='/register' element={<RegisterForm/>} />
+          <Route path='/concerns' element={<Concern />} />
           <Route element={<PrivateRoutes />}>
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>

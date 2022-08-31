@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import URL from '../../utils/url';
 
@@ -14,6 +15,7 @@ function AccountSettings() {
 
     const [profile, setProfile] = useState(initialProfile);
     const [success, setSuccess] = useState(false);
+    const navigate = useNavigate();
     
     useEffect(() => {
         axios.get(`${URL}/users/${username}`).then(res => {
@@ -51,7 +53,9 @@ function AccountSettings() {
             return <></>
         }
     }
-
+    function cancel() {
+        navigate('/profile');
+    }
     return (
         <div className='settings-container'>
              <h1>Account Settings</h1>
@@ -76,6 +80,8 @@ function AccountSettings() {
                 </div>
                 <button>Submit Changes</button>
             </form>
+            <h2>Cancel Changes</h2>
+            <button onClick={cancel}>Cancel & Return</button>
         </div>
     )
 }

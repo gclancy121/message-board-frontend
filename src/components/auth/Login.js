@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import URL from '../../utils/url';
 
+import '../../css/auth/Login.css'
+
 const LoginForm = () => {
     const initialLoginForm = {
         username: '',
@@ -50,32 +52,42 @@ const LoginForm = () => {
     }
 
    return (
-    <div className="login">
-        <div className='message'>
+    <> 
+        <div className='error'>
             <h2>{login.error}</h2>
             <LoggedInButton />
         </div>
-        <form onSubmit={onSubmit}>
-            <div className="header">
-                <h3>Login</h3>
+        <div className="login-container">
+            <div className="login">
+                <form onSubmit={onSubmit}>
+                    <div className="header">
+                        <h3>Login</h3>
+                    </div>
+                    <div className="form-group">
+                        <label id='username-text'>Username </label>
+                        <input type='text' id='username-login' name='username' value={login.username} onChange={handleChange}/>
+                    </div>
+                    <div className="form-group">
+                        <label>Password </label>
+                        <input type='password' id='password-login' name='password' value={login.password} onChange={handleChange}/>
+                    </div>
+                    <div className="submit">
+                        <input type='submit' id='submit-button' />
+                    </div>
+                    <div className="register-link">
+                        <p>Not yet registered? Register <Link to='/register'>here.</Link></p>
+                    </div>
+                </form>
             </div>
-            <div className="form-group">
-                <label>Username </label>
-                <input type='text' name='username' value={login.username} onChange={handleChange}/>
+            <div className="fluff">
+                <h2>Welcome Back to Weeb Central!</h2>
+                <p> If this is your first time here, go ahead and click the "Register Now" button.
+                    But if you're not, thanks for coming back. I'm glad you like the place. I'm doing my best to get it up, so thanks for the patience.
+                </p>
             </div>
-            <div className="form-group">
-                <label>Password </label>
-                <input type='password' name='password' value={login.password} onChange={handleChange}/>
-            </div>
-            <div className="submit">
-                <input type='submit' />
-            </div>
-            <div className="form-group">
-                <p>Not yet registered? Register <Link to='/register'>here.</Link></p>
-            </div>
-        </form>
-
-    </div>
+        </div>
+    </>
+    
    )
 }
 

@@ -1,0 +1,18 @@
+/* Check Login.css as well, also controls register CSS elements because I suck at CSS*/
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* border: 1px solid red; */
+}
+.form-group #username-register {
+    background-color: #e8e0c9;
+}
+.form-group #password-register {
+    background-color: #e8e0c9;
+}
+.message {
+    margin-left: 10%;
+}

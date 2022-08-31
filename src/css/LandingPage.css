@@ -6,22 +6,15 @@
 }
 
 /* images */
-#sachi {
-    width: 250px;
-    height: 250px;
-    padding: 1%;
-}
-#holo {
-    width: 250px;
-    height: 250px;
-    padding: 1%;
-}
-#asuna{
+.landing-picture {
     width: 250px;
     height: 250px;
     padding: 1%;
 }
 .images {
+    /* border: 1px red solid; */
+    margin-left: 15%;
+    margin-right: 15%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -30,15 +23,44 @@
 /* text */
 .welcome-text {
     text-align: center;
-    font-family: "Comic Sans MS"
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .login-info {
     display: flex;
     justify-content: space-evenly;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 .copyright {
     font-size: 0.65rem;
 }
+.site-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px black solid;
+    background-color: white;
+}
+.changelog-title {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.changelog {
+    display: flex;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    border: 3px black solid;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
 
 
 
