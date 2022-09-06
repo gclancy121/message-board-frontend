@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import URL from '../../utils/url';
 
-
+import '../../css/auth/AccountSettings.css';
 function AccountSettings() {
     const username = localStorage.getItem('username');
     const initialProfile = {
@@ -15,6 +15,7 @@ function AccountSettings() {
 
     const [profile, setProfile] = useState(initialProfile);
     const [success, setSuccess] = useState(false);
+    const [toggle, setToggle] = useState(false);
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -46,6 +47,14 @@ function AccountSettings() {
             [evt.target.name]: evt.target.value
         })
     }
+    // function getFile(evt) {
+    //     const file = evt.target.files[0];
+    //     const storageRef = app.storageRef().ref();
+    //     const fileRef = storageRef.child(file.name);
+    //     fileRef.put(file).then(() => {
+    //         console.log('uploaded a file');
+    // })
+    // }
     function SuccessMessage() {
         if (success) {
             return <h3>Changes successful.</h3>
@@ -61,20 +70,23 @@ function AccountSettings() {
              <h1>Account Settings</h1>
              <SuccessMessage />
             <form onSubmit={onSubmit}>
-                <div className="settings-container"> 
+                <div className="setting"> 
                     <h3>About Me</h3>
                     <textarea name="about_me" onChange={handleChange} value={profile.about_me}/>
                 </div>
-                <div className="settings-container">
+                <div className="setting">
                     <h3>Favorite Waifu</h3>
                     <input type='text' name='fav_waifu' onChange={handleChange} value={profile.fav_waifu} />
                 </div>
-                <div className="settings-container">
+                <div className="setting">
                     <h3>Profile Picture</h3>
-                    <p>Must be a URL to another website. It won't error yet, but I'll be nice for now.</p>
+                    <p>Website URL</p>
                     <input type='text' name='profile_picture' onChange={handleChange} value={profile.profile_picture} />
+                    <p>Local File</p>
+                    Coming soon!
+                    {/* <input type='file' accept='.jpg, .jpeg, .png' id='profile_picture_upload' onChange={getFile} /> */}
                 </div>
-                <div className="settings-container">
+                <div className="setting">
                     <h3>Username</h3>
                     <input type='text' name='username' onChange={handleChange} value={profile.username} />
                 </div>

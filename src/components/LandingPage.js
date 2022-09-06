@@ -15,12 +15,12 @@ function LandingPage () {
         <div className='login-info'>
             <h3>Returning member? Click on Sachi to login!</h3>
             <h3>New member? Click Holo to register!</h3> 
-            <h3>Have a concern? Click on Asuna to file one!</h3>
+            <h3>Have a complaint? Click on Asuna to file one!</h3>
         </div>
         <div className='images'>
             <Link to='/login'><img className='landing-picture' src="https://pm1.narvii.com/6338/fdb283095a57ba85f53c7b54563adf7085ad94f8_hq.jpg" alt="sachi komine"/></Link>
             <Link to='/register'><img className='landing-picture' src="http://images6.fanpop.com/image/photos/33300000/Holo-333333333-spice-and-wolf-33338229-554-463.png" alt="holo the wise wolf"/></Link>
-            <Link to='/concerns'><img className='landing-picture' src="https://i.pinimg.com/736x/87/0c/ac/870cac7aecec860a908d6663dfa3e56f.jpg" alt="yuuki asuna"/></Link>
+            <Link to='/complaints'><img className='landing-picture' src="https://i.pinimg.com/736x/87/0c/ac/870cac7aecec860a908d6663dfa3e56f.jpg" alt="yuuki asuna"/></Link>
         </div>
         <div className='site-info'>
             <h2>So what kinds of things can you expect to do on this website?</h2>
@@ -35,6 +35,20 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
+            <p>Version: Pre-Alpha</p>
+            Date: 9/5/2022
+            <ul>
+                <li>Okay back in the saddle, busy Friday + Monday off</li>
+                <li>Let me look over what needs to be done</li>
+                <li>Probably the CSS again, but just adjusting margins on the Account Settings page</li>
+                <li>I have to take a break from CSS after that, it killed my motivation last week</li>
+                <li>Account Settings looks a bit better, time to add a concerns page</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
+            Date: 9/1/2022
+            <ul>
+               <li>Oh yippee time for more CSS haha please kill me</li> 
+            </ul>
             <p>Version: Pre-Alpha</p>
             Date: 8/31/22
             <ul>

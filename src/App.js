@@ -18,7 +18,7 @@ import RegisterForm from './components/auth/Register';
 //Landing Pages & Header
 import SiteHeader from './components/SiteHeader';
 import LandingPage from './components/LandingPage';
-import Concern from './components/non-user-actions/Concern';
+import Complaint from './components/non-user-actions/Complaint';
 
 import './css/App.css'
 
@@ -33,7 +33,7 @@ const App = () => {
           <Route path='/' element={<LandingPage/>} />
           <Route path='/login' element={<LoginForm/>} />
           <Route path='/register' element={<RegisterForm/>} />
-          <Route path='/concerns' element={<Concern />} />
+          <Route path='/complaints' element={<Complaint />} />
           <Route element={<PrivateRoutes />}>
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>

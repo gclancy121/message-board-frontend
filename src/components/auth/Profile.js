@@ -9,7 +9,7 @@ const Profile = () => {
     const username = localStorage.getItem('username');
     const welcome = localStorage.getItem('message');
     const [profile, setProfile] = useState({});
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState('Welcome back to weeb central');
 
     const navigate = useNavigate();
 
@@ -17,8 +17,8 @@ const Profile = () => {
         axios.get(`${URL}/users/${username}`).then(res => {
             setProfile(res.data);
         })
-        setMessage(welcome);
-        localStorage.removeItem('message');
+        // setMessage(welcome);
+        // localStorage.removeItem('message');
     }, [])
     
     function logout() {
@@ -31,21 +31,32 @@ const Profile = () => {
     }
     //replace hard coded posts when DB created
     return (
-        <div className="container">
+        <>
             <div className='welcome-message'>
                 <h2>{message}</h2>
             </div>
-            <div className='profile'>
-                <h3>About Me</h3>
-                <img id="profile-picture" src={profile.profile_picture}/>
-                <p>Username: {username}</p>
-                <p>Posts: 0</p>
-                <p>Favorite waifu: {profile.fav_waifu}</p>
-                <p>About Me: {profile.about_me}</p>
+            <div className="container">
+                <div className='profile-left'>
+                    <h3>About Me</h3>
+                    <img id="profile-picture" src={profile.profile_picture}/>
+                    <h3>Username: </h3><p>{username}</p>
+                </div> 
+                <div className='profile-center'>
+                    <h3>Post Count: </h3> 0
+                    <h3>Favorite Waifu: </h3> {profile.fav_waifu}
+                </div>
+                <div className='profile-right'>
+                    <h3>About Me:</h3> {profile.about_me}
+                </div>
+                <div className='buttons'>
+                    <button onClick={logout}>Logout</button>
+                    <button onClick={settings}>Account Settings</button>
+                </div> 
+                
             </div>
-            <button onClick={logout}>Logout</button>
-            <button onClick={settings}>Account Settings</button>
-        </div>
+            
+        </>
+        
     )
 }
 
