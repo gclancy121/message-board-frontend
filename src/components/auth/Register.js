@@ -34,7 +34,8 @@ const RegisterForm = () => {
         }).catch(err => {
             setRegister({
                 ...register,
-                message: err.response.data.message});
+                message: err.response.data.message
+            });
         })
     }
 
