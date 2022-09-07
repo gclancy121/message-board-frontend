@@ -21,7 +21,7 @@ const AllWaifus = () => {
     }
     return (
         <div className="waifu-list">
-            <input type="search" placeholder="Search for a specific waifu" />
+            {/* <input type="search" placeholder="Search for a specific waifu" /> */}
             <button onClick={nav}>Add A Waifu</button>
             {waifus.map(waifu => <Waifu waifu={waifu} key={waifu.waifu_id}/>)}
         </div>

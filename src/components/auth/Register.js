@@ -18,7 +18,8 @@ const RegisterForm = () => {
             ...register,
             [evt.target.name]: evt.target.value
         });
-    }
+    };
+    
     const onSubmit = evt => {
         evt.preventDefault();
         const newUser = {

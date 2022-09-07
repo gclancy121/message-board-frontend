@@ -44,6 +44,10 @@
     border: 1px black solid;
     background-color: white;
 }
+.site-info p{
+    margin-left: 1%;
+    margin-right: 1%;
+}
 .changelog-title {
     display: flex;
     flex-direction: column;

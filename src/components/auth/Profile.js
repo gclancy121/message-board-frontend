@@ -9,7 +9,7 @@ const Profile = () => {
     const username = localStorage.getItem('username');
     const welcome = localStorage.getItem('message');
     const [profile, setProfile] = useState({});
-    const [message, setMessage] = useState('Welcome back to weeb central');
+    const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
 
@@ -17,8 +17,8 @@ const Profile = () => {
         axios.get(`${URL}/users/${username}`).then(res => {
             setProfile(res.data);
         })
-        // setMessage(welcome);
-        // localStorage.removeItem('message');
+        setMessage(welcome);
+        localStorage.removeItem('message');
     }, [])
     
     function logout() {

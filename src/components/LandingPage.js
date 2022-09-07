@@ -25,8 +25,9 @@ function LandingPage () {
         <div className='site-info'>
             <h2>So what kinds of things can you expect to do on this website?</h2>
                 <p>This website was designed to be a general message board. While you're here, you can talk about anything anime related - your favorite shows, your least favorite shows, or even vtubers, if you're into those as well.
-                For now, this is an extremely boring landing page, because I haven't really decided on all of the functionalities yet. I know there will be a message board element, and there will also be an element that allows you to add waifus to the databse.
-                For now, enjoy what little there really is to do in this admittedly bare-bones app - Don't worry, I'm working on it! Check the changelog for more info.
+                For now, this is an extremely boring landing page, because I haven't really decided on all of the functionalities yet. So far, you can view a list of waifus, and add one to the database. You have to log in to do that, and you also 
+                can edit the information in your profile, such as your account name and your About Me section. You can even have a favorite waifu! This place isn't even close to done yet, so make sure to check the changelog below for more updates
+                on what I'm doing and what you can expect in the future.
                 </p>
         </div>
         <div className="changelog-title">
@@ -36,13 +37,21 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
-            Date: 9/5/2022
+            Date: 9/7/2022
+            <ul>
+                <li>Added a waifu adding form and styled it</li>
+                <li>Rewriting waifu database and how information from it is displayed</li>
+                <li>Redid the display additional waifu info section</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
+            Date: 9/6/2022
             <ul>
                 <li>Okay back in the saddle, busy Friday + Monday off</li>
                 <li>Let me look over what needs to be done</li>
                 <li>Probably the CSS again, but just adjusting margins on the Account Settings page</li>
                 <li>I have to take a break from CSS after that, it killed my motivation last week</li>
-                <li>Account Settings looks a bit better, time to add a concerns page</li>
+                <li>Account Settings looks a bit better</li>
+                <li>Added concerns page</li>
             </ul>
             <p>Version: Pre-Alpha</p>
             Date: 9/1/2022

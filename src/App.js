@@ -10,6 +10,7 @@ import AccountSettings from './components/auth/AccountSettings';
 //Waifu related routes
 import AllWaifus from './components/waifus/allWaifus';
 import AddWaifu from './components/waifus/addWaifu';
+import AdditionalInfo from './components/waifus/additionalInformation';
 
 //Registration & Login
 import LoginForm from './components/auth/Login';
@@ -39,6 +40,7 @@ const App = () => {
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
             <Route element={<AddWaifu />} path='/waifus/add-waifu' />
+            <Route element={<AdditionalInfo />} path='/waifus/id=:id' />
           </Route>
         </Routes>
       </div>
