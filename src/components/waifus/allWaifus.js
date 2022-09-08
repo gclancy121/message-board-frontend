@@ -16,16 +16,19 @@ const AllWaifus = () => {
         })
         }, [])
 
-    function nav() {
+    function navAdd() {
         navigate('/waifus/add-waifu');
+    }
+    function navSearch() {
+        navigate('/waifus/search-waifu');
     }
     return (
         <div className="waifu-list">
-            {/* <input type="search" placeholder="Search for a specific waifu" /> */}
-            <button onClick={nav}>Add A Waifu</button>
+            <button onClick={navSearch}>Search for a Waifu</button>
+            <button onClick={navAdd}>Add A Waifu</button>
             {waifus.map(waifu => <Waifu waifu={waifu} key={waifu.waifu_id}/>)}
         </div>
     )
 }
 
-export default AllWaifus
+export default AllWaifus;

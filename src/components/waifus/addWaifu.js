@@ -108,7 +108,8 @@ function AddWaifu() {
                 </select>
             </div>
             <div className='form-group'>
-                <label>Picture: </label>
+                <label>Picture: 
+                (Must be a direct image link)</label>
                 <input type='text' id='waifu-pic' name='waifu_picture' value={waifu.waifu_picture} onChange={handleChange} />
             </div>
             <div className='description-field'>

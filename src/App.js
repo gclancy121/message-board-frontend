@@ -2,6 +2,9 @@ import React from 'react';
 
 import {Route, Routes} from 'react-router-dom';
 
+//PageEmpty
+import PageEmpty from './components/PageEmpty';
+
 //PrivateRoutes
 import PrivateRoutes from './utils/PrivateRoutes';
 //Profile related routes
@@ -11,6 +14,7 @@ import AccountSettings from './components/auth/AccountSettings';
 import AllWaifus from './components/waifus/allWaifus';
 import AddWaifu from './components/waifus/addWaifu';
 import AdditionalInfo from './components/waifus/additionalInformation';
+import WaifuSearch from './components/waifus/waifuSearch';
 
 //Registration & Login
 import LoginForm from './components/auth/Login';
@@ -23,6 +27,7 @@ import Complaint from './components/non-user-actions/Complaint';
 
 import './css/App.css'
 
+
 const App = () => {
   return (
     <div>
@@ -31,6 +36,7 @@ const App = () => {
       </nav>
       <div>
         <Routes>
+          <Route path='*' element={<PageEmpty />} />
           <Route path='/' element={<LandingPage/>} />
           <Route path='/login' element={<LoginForm/>} />
           <Route path='/register' element={<RegisterForm/>} />
@@ -41,6 +47,7 @@ const App = () => {
             <Route element={<AccountSettings />} path='/settings' />
             <Route element={<AddWaifu />} path='/waifus/add-waifu' />
             <Route element={<AdditionalInfo />} path='/waifus/id=:id' />
+            <Route element={<WaifuSearch />} path='/waifus/search-waifu' />
           </Route>
         </Routes>
       </div>

@@ -12,10 +12,9 @@ function AdditionalInfo() {
         if (id == null) {
             navigate('/waifus')
         }
-        axios.get(`${URL}/waifus/${id}`).then(res => {
+        axios.get(`${URL}/waifus/id/${id}`).then(res => {
             setWaifu(res.data);
         });
-        console.log(waifu);
     }, [])
     function returnToList() {
         navigate('/waifus');
@@ -24,7 +23,7 @@ function AdditionalInfo() {
         <div className='addtl-info-container'>
             <img id='addtl-info-pic' src={waifu.waifu_picture}/>
             <h3>{waifu.waifu_name}</h3>
-            <p>{waifu.waifu_birth_month} {waifu.waifu_birth_day}</p>
+            <p>Birthday: {waifu.waifu_birth_month} {waifu.waifu_birth_day}</p>
             <p>{waifu.waifu_description}</p>
             <button onClick={returnToList}>Return</button>
         </div>
