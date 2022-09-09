@@ -3,7 +3,7 @@ import axios from "axios";
 import URL from "../../utils/url";
 import Waifu from "./waifu";
 
-import '../../css/waifus/WaifuSearch.css';
+import '../../css/waifus/waifuSearch.css';
 function WaifuSearch() {
     const initialSearchState = {
         waifu_search: ''

@@ -19,6 +19,9 @@ function AdditionalInfo() {
     function returnToList() {
         navigate('/waifus');
     }
+    function navUpdate() {
+        navigate('/waifus/update-waifu');
+    }
     return (
         <div className='addtl-info-container'>
             <img id='addtl-info-pic' src={waifu.waifu_picture}/>
@@ -26,6 +29,7 @@ function AdditionalInfo() {
             <p>Birthday: {waifu.waifu_birth_month} {waifu.waifu_birth_day}</p>
             <p>{waifu.waifu_description}</p>
             <button onClick={returnToList}>Return</button>
+            <button onClick={navUpdate}>Update Information</button>
         </div>
     )
 }

@@ -12,7 +12,7 @@ const Waifu = (props) => {
 
     return (
         <div className="waifu">
-            {waifu.waifu_name} 
+            <h4>{waifu.waifu_name}</h4>
             <button onClick={showInfo}> Click here to load more info</button>
         </div>
     )

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+.waifu-list {
+    width: 75%;
+    border: 2px solid black;
+    border-radius: 3%;
+    margin-left: 10%;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.waifu-buttons {
+    display: flex;
+    width: 50%;
+    margin-left: 10%;
+}
+
+.waifu-buttons button {
+    padding: 1%;
+    font-family: 'Oswald', cursive;
+    font-size: 1.2rem;
+    border-radius: 15%;
+}
+.waifu {
+    padding: .5%;
+}
+.waifu h4{
+    margin-left: 5%;
+}
+.waifu button {
+    margin-left: 5%;
+    border: 2px solid black;
+    font-family: 'Oswald', cursive;
+    font-size: 1.2rem;
+}

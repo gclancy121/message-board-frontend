@@ -15,6 +15,7 @@ import AllWaifus from './components/waifus/allWaifus';
 import AddWaifu from './components/waifus/addWaifu';
 import AdditionalInfo from './components/waifus/additionalInformation';
 import WaifuSearch from './components/waifus/waifuSearch';
+import UpdateWaifu from './components/waifus/updateWaifu';
 
 //Registration & Login
 import LoginForm from './components/auth/Login';
@@ -45,6 +46,7 @@ const App = () => {
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
+            <Route element={<UpdateWaifu />} path='waifus/update-waifu' />
             <Route element={<AddWaifu />} path='/waifus/add-waifu' />
             <Route element={<AdditionalInfo />} path='/waifus/id=:id' />
             <Route element={<WaifuSearch />} path='/waifus/search-waifu' />

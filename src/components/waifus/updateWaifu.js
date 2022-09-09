@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
-
 import URL from "../../utils/url";
-import '../../css/waifus/addWaifu.css';
 
-function AddWaifu() {
+import {useNavigate} from 'react-router-dom';
+
+function UpdateWaifu() {
     const initialWaifuForm = {
         waifu_name: '',
         waifu_description: '',
@@ -14,6 +14,14 @@ function AddWaifu() {
     }
     const [waifu, setWaifu] = useState(initialWaifuForm);
     const [message, setMessage] = useState('');
+    const id = localStorage.getItem('id');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get(`${URL}/waifus/id/${id}`).then(res => {
+            setWaifu(res.data);
+        })
+    }, [])
 
     const handleChange = evt => {
         setWaifu({
@@ -23,32 +31,30 @@ function AddWaifu() {
     };
     const onSubmit = evt => {
         evt.preventDefault();
-        const newWaifu = {
+        const updatedWaifu = {
             waifu_name: waifu.waifu_name,
             waifu_description: waifu.waifu_description,
             waifu_birth_month: waifu.waifu_birth_month,
             waifu_birth_day: waifu.waifu_birth_day,
             waifu_picture: waifu.waifu_picture,
         }
-        axios.post(`${URL}/waifus`, newWaifu).then(res => {
-            setWaifu(initialWaifuForm);
-            setMessage({message: "Waifu added!"});
+        axios.put(`${URL}/waifus/id/${id}`, updatedWaifu).then(res => {
+            navigate(`/waifus/id=${id}`);
         }).catch(err => {
             setMessage({
                 message: err.response.data.message
-            });
-        });
+            })
+        })
     }
-
     return (
-       <>
+        <>
         <div className='message'>
             <h2>{message.message}</h2>
         </div>
        <div className='add-container'>
         <form onSubmit={onSubmit}>
             <div className='header'>
-                <h3>Add A Waifu</h3>
+                <h3>Update Waifu</h3>
             </div>
             <div className='form-group'>
                 <label>Waifu Name: </label>
@@ -125,4 +131,4 @@ function AddWaifu() {
     )
 }
 
-export default AddWaifu;
+export default UpdateWaifu;

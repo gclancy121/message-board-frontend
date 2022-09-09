@@ -37,6 +37,14 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 9/9/2022
+            <ul>
+                <li>Added more CSS</li>
+                <li>Going to add more waifus to the list as well</li>
+                <li>Added a waifu update function</li>
+                <li>even more css</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 9/8/2022
             <ul>
                 <li>Hmm today I will add a search functionality to waifus</li>

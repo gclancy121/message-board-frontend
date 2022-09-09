@@ -5,7 +5,7 @@ import URL from '../../utils/url';
 
 import Waifu from "./waifu";
 
-
+import '../../css/waifus/allWaifus.css';
 const AllWaifus = () => {
     const [waifus, setWaifus] = useState([]);
     const navigate = useNavigate();
@@ -23,11 +23,16 @@ const AllWaifus = () => {
         navigate('/waifus/search-waifu');
     }
     return (
-        <div className="waifu-list">
-            <button onClick={navSearch}>Search for a Waifu</button>
-            <button onClick={navAdd}>Add A Waifu</button>
-            {waifus.map(waifu => <Waifu waifu={waifu} key={waifu.waifu_id}/>)}
-        </div>
+        <>
+            <div className='waifu-buttons'>
+                    <button onClick={navSearch}>Search for a Waifu</button>
+                    <button onClick={navAdd}>Add A Waifu</button>
+                </div>
+            <div className="waifu-list">
+                {waifus.map(waifu => <Waifu waifu={waifu} key={waifu.waifu_id}/>)}
+            </div>
+        </>
+        
     )
 }
 
