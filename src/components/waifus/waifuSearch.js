@@ -35,7 +35,7 @@ function WaifuSearch() {
             )
         } else {
             return (
-                <div>
+                <div className='waifus'>
                     {waifus.map(waifu => <Waifu waifu={waifu} key={waifu.waifu_id} />)}
                 </div>
                 
@@ -48,7 +48,7 @@ function WaifuSearch() {
          <div className='search-container'>
             <form className='search-box'>
                 <input type='text' placeholder='Search for a waifu' name='waifu_search' id='search' value={search.waifu_search} onChange={handleChange} />
-                <button onClick={searchWaifu}>Submit</button>
+                <button id='submit' onClick={searchWaifu}>Submit</button>
             </form>   
         </div>
         <Conditional />

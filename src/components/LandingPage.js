@@ -37,6 +37,14 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 9/19/2022
+            <ul>
+                <li>Well Shit i gotta get back into the swing of things</li>
+                <li>Did some CSS today</li>
+                <li>I'm going to update the authentication so it's actually secure</li>
+                <li>Okay, JWT auth actually works now - got sidetracked on redoing the auth system and almost broke my brain</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 9/9/2022
             <ul>
                 <li>Added more CSS</li>

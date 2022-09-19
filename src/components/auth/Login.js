@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import URL from '../../utils/url';
 
+
+
 import '../../css/auth/Login.css'
 
 const LoginForm = () => {
@@ -11,7 +13,6 @@ const LoginForm = () => {
         password: '',
         error: ''
     }
-
     const [login, setLogin] = useState(initialLoginForm);
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -28,7 +29,7 @@ const LoginForm = () => {
             password: login.password
         }
        axios.post(`${URL}/users/login`, newForm).then(res => {
-        const data = res.data;
+        const data = res.data
         localStorage.setItem('username', newForm.username);
         localStorage.setItem('authorization', data.token);
         localStorage.setItem('message', data.message);
