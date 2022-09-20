@@ -10,6 +10,8 @@ import PrivateRoutes from './utils/PrivateRoutes';
 //Profile related routes
 import Profile from './components/auth/Profile';
 import AccountSettings from './components/auth/AccountSettings';
+import LocalMachineUpload from './components/auth/LocalMachinePicUpload';
+
 //Waifu related routes
 import AllWaifus from './components/waifus/allWaifus';
 import AddWaifu from './components/waifus/addWaifu';
@@ -46,6 +48,7 @@ const App = () => {
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
+            <Route element={<LocalMachineUpload />} path='/settings/picture-upload' exact/>
             <Route element={<UpdateWaifu />} path='waifus/update-waifu' />
             <Route element={<AddWaifu />} path='/waifus/add-waifu' />
             <Route element={<AdditionalInfo />} path='/waifus/id=:id' />

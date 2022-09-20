@@ -10,12 +10,11 @@ function AccountSettings() {
        about_me: '',
        fav_waifu: '',
        profile_picture: '',
-       username: '' 
+       username: ''
     }
 
     const [profile, setProfile] = useState(initialProfile);
     const [success, setSuccess] = useState(false);
-    const [toggle, setToggle] = useState(false);
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -27,19 +26,18 @@ function AccountSettings() {
     function onSubmit(evt) {
         evt.preventDefault();
         const id = profile.user_id;
-        const changes = {
-            about_me: profile.about_me,
-            fav_waifu: profile.fav_waifu,
-            profile_picture: profile.profile_picture,
-            username: profile.username
-        }
-        axios.put(`${URL}/users/${id}`, (id, changes)).then(res => {
-            const newProfile = res.data;
-            setProfile(newProfile);
-            setSuccess(true);
-            localStorage.setItem('username', newProfile.username);
-        }).catch(err => console.log(err));
-       
+            const changes = {
+                about_me: profile.about_me,
+                fav_waifu: profile.fav_waifu,
+                profile_picture: profile.profile_picture,
+                username: profile.username
+            }
+            axios.put(`${URL}/users/${id}`, (id, changes)).then(res => {
+                const newProfile = res.data;
+                setProfile(newProfile);
+                setSuccess(true);
+                localStorage.setItem('username', newProfile.username);
+            }).catch(err => console.log(err));
     }
     function handleChange(evt) {
         setProfile({
@@ -47,20 +45,16 @@ function AccountSettings() {
             [evt.target.name]: evt.target.value
         })
     }
-    // function getFile(evt) {
-    //     const file = evt.target.files[0];
-    //     const storageRef = app.storageRef().ref();
-    //     const fileRef = storageRef.child(file.name);
-    //     fileRef.put(file).then(() => {
-    //         console.log('uploaded a file');
-    // })
-    // }
     function SuccessMessage() {
         if (success) {
             return <h3>Changes successful.</h3>
         } else {
             return <></>
         }
+    }
+    function local() {
+        localStorage.setItem('id', profile.user_id);
+        navigate('/settings/picture-upload')
     }
     function cancel() {
         navigate('/profile');
@@ -82,9 +76,8 @@ function AccountSettings() {
                     <h3>Profile Picture</h3>
                     <p>Website URL</p>
                     <input type='text' name='profile_picture' onChange={handleChange} value={profile.profile_picture} />
-                    <p>Local File</p>
-                    Coming soon!
-                    {/* <input type='file' accept='.jpg, .jpeg, .png' id='profile_picture_upload' onChange={getFile} /> */}
+                    {/* <button onClick={local}>Upload from Computer</button> */}
+                    Upload from computer coming soon!
                 </div>
                 <div className="setting">
                     <h3>Username</h3>

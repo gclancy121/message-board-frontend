@@ -37,6 +37,12 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 9/20/2022
+            <ul>
+                <li>I'm gonna mess with the picture upload section of Account Settings and see if I can get it to work.</li>
+                <li>Not quite yet but im still gonna keep working on it</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 9/19/2022
             <ul>
                 <li>Well Shit i gotta get back into the swing of things</li>
