@@ -21,7 +21,7 @@
     width: 100%;
     padding: 4px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly; 
 }
 .container {
     border: 2px solid black;

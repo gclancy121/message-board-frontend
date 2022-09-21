@@ -37,6 +37,13 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 9/21/2022
+            <ul>
+                <li>Let's see what I'm gonna work on today</li>
+                <li>Local image uploading is impossible. I'll worry about that later.</li>
+                <li>I guess for now I'll work on adding the message board functionality of the message board website I built - only took me like a month to get around to it.</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 9/20/2022
             <ul>
                 <li>I'm gonna mess with the picture upload section of Account Settings and see if I can get it to work.</li>

@@ -19,16 +19,20 @@ const Profile = () => {
         })
         setMessage(welcome);
         localStorage.removeItem('message');
-    }, [])
+    }, []);
     
     function logout() {
         localStorage.clear();
         window.location.reload();
-    }
+    };
     
     function settings() {
-        navigate(`/settings`)
-    }
+        navigate(`/settings`);
+    };
+    function posts() {
+        alert('Area not implemented yet.')
+        // navigate(`/posts`);
+    };
     //replace hard coded posts when DB created
     return (
         <>
@@ -51,6 +55,7 @@ const Profile = () => {
                 <div className='buttons'>
                     <button onClick={logout}>Logout</button>
                     <button onClick={settings}>Account Settings</button>
+                    <button onClick={posts}>Posts</button>
                 </div> 
                 
             </div>

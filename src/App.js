@@ -7,10 +7,10 @@ import PageEmpty from './components/PageEmpty';
 
 //PrivateRoutes
 import PrivateRoutes from './utils/PrivateRoutes';
+
 //Profile related routes
 import Profile from './components/auth/Profile';
 import AccountSettings from './components/auth/AccountSettings';
-import LocalMachineUpload from './components/auth/LocalMachinePicUpload';
 
 //Waifu related routes
 import AllWaifus from './components/waifus/allWaifus';
@@ -18,6 +18,9 @@ import AddWaifu from './components/waifus/addWaifu';
 import AdditionalInfo from './components/waifus/additionalInformation';
 import WaifuSearch from './components/waifus/waifuSearch';
 import UpdateWaifu from './components/waifus/updateWaifu';
+
+//Message board related routes
+import AllPosts from './components/posts/allPosts';
 
 //Registration & Login
 import LoginForm from './components/auth/Login';
@@ -45,10 +48,10 @@ const App = () => {
           <Route path='/register' element={<RegisterForm/>} />
           <Route path='/complaints' element={<Complaint />} />
           <Route element={<PrivateRoutes />}>
+            <Route element={<AllPosts />} path='/posts' />
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
-            <Route element={<LocalMachineUpload />} path='/settings/picture-upload' exact/>
             <Route element={<UpdateWaifu />} path='waifus/update-waifu' />
             <Route element={<AddWaifu />} path='/waifus/add-waifu' />
             <Route element={<AdditionalInfo />} path='/waifus/id=:id' />

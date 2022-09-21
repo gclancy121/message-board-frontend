@@ -52,10 +52,6 @@ function AccountSettings() {
             return <></>
         }
     }
-    function local() {
-        localStorage.setItem('id', profile.user_id);
-        navigate('/settings/picture-upload')
-    }
     function cancel() {
         navigate('/profile');
     }
@@ -76,8 +72,6 @@ function AccountSettings() {
                     <h3>Profile Picture</h3>
                     <p>Website URL</p>
                     <input type='text' name='profile_picture' onChange={handleChange} value={profile.profile_picture} />
-                    {/* <button onClick={local}>Upload from Computer</button> */}
-                    Upload from computer coming soon!
                 </div>
                 <div className="setting">
                     <h3>Username</h3>
