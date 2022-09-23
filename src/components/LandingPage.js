@@ -26,7 +26,7 @@ function LandingPage () {
             <h2>So what kinds of things can you expect to do on this website?</h2>
                 <p>This website was designed to be a general message board. While you're here, you can talk about anything anime related - your favorite shows, your least favorite shows, or even vtubers, if you're into those as well.
                 For now, this is an extremely boring landing page, because I haven't really decided on all of the functionalities yet. So far, you can view a list of waifus, and add one to the database. You have to log in to do that, and you also 
-                can edit the information in your profile, such as your account name and your About Me section. You can even have a favorite waifu! This place isn't even close to done yet, so make sure to check the changelog below for more updates
+                can edit the information in your profile, such as your account name and your About Me section. You can even have a favorite waifu! Along with that, you can add waifus, look at all of them, create posts about waifus, and view all posts. This place isn't even close to done yet, so make sure to check the changelog below for more updates
                 on what I'm doing and what you can expect in the future.
                 </p>
         </div>
@@ -36,6 +36,15 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
+        <p>Version: Pre-Alpha</p>
+            Date: 9/23/2022
+            <ul>
+                <li>Time to continue the message board functionality</li>
+                <li>Added the database functions</li>
+                <li>Added post viewing</li>
+                <li>Added individual post info</li>
+                <li>Added ability to add posts, next week is deletion of all kinds</li>
+            </ul>
             <p>Version: Pre-Alpha</p>
             Date: 9/21/2022
             <ul>

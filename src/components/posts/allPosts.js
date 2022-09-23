@@ -1,19 +1,32 @@
-import React,{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import URL from '../../utils/url';
 
 import Post from './Post';
 
 
 function AllPosts() {
     const [posts, setPosts] = useState([]);
-    
-    useEffect(() => {
-        
-    }, [])
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        axios.get(`${URL}/posts`).then(res => {
+            setPosts(res.data);
+        })
+    }, [])
+    function addPost() {
+        navigate('/posts/add-post');
+    }
     return (
-        <div>
-            Uh oh this is in progress and it's 4 pm
-        </div>
+        <>
+            <div className='post-buttons'>
+                <button onClick={addPost}>Make Post</button>
+            </div>
+            <div className='post-list'>
+                {posts.map(post => <Post post={post} key={post.post_id} />)}
+            </div>
+        </>
     )
 }
 

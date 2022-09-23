@@ -30,8 +30,7 @@ const Profile = () => {
         navigate(`/settings`);
     };
     function posts() {
-        alert('Area not implemented yet.')
-        // navigate(`/posts`);
+        navigate(`/posts`);
     };
     //replace hard coded posts when DB created
     return (

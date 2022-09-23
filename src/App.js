@@ -21,6 +21,8 @@ import UpdateWaifu from './components/waifus/updateWaifu';
 
 //Message board related routes
 import AllPosts from './components/posts/allPosts';
+import PostInformation from './components/posts/postInformation';
+import AddPost from './components/posts/addPost';
 
 //Registration & Login
 import LoginForm from './components/auth/Login';
@@ -49,6 +51,8 @@ const App = () => {
           <Route path='/complaints' element={<Complaint />} />
           <Route element={<PrivateRoutes />}>
             <Route element={<AllPosts />} path='/posts' />
+            <Route element={<PostInformation />} path='/posts/:id' exact />
+            <Route element={<AddPost />} path='posts/add-post' exact/>
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
