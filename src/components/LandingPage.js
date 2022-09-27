@@ -36,7 +36,14 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
-        <p>Version: Pre-Alpha</p>
+            <p>Version: Pre-Alpha</p>
+            Date: 9/27/2022
+            <ul>
+                <li>CSS for the added parts</li>
+                <li>Tinkering around with adding comments</li>
+                <li>Added skeleton for adding comments</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 9/23/2022
             <ul>
                 <li>Time to continue the message board functionality</li>

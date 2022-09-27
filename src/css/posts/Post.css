@@ -1,0 +1,11 @@
+.post {
+    border: 1px solid black;
+    padding: 1%;
+    margin-bottom: 10px;
+}
+.post h4 {
+    cursor: pointer;
+}
+#post-title {
+    width: 50%;
+}

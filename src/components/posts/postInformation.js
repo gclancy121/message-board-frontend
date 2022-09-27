@@ -3,6 +3,7 @@ import axios from "axios";
 import URL from "../../utils/url";
 import { useNavigate, useParams } from "react-router-dom";
 
+import AllComments from "./comments/AllComments";
 
 function PostInformation() {
     const [post, setPost] = useState({});
@@ -25,6 +26,8 @@ function PostInformation() {
             <button onClick={navToAll}>Return to All Posts</button>
             <h2>{post.post_title}</h2>
             <p>{post.post_body}</p>
+
+            <AllComments id={id} />
         </div>
     )
 }

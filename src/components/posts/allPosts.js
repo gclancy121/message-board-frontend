@@ -5,7 +5,7 @@ import URL from '../../utils/url';
 
 import Post from './Post';
 
-
+import '../../css/posts/allPosts.css';
 function AllPosts() {
     const [posts, setPosts] = useState([]);
     const navigate = useNavigate();
@@ -19,7 +19,10 @@ function AllPosts() {
         navigate('/posts/add-post');
     }
     return (
-        <>
+        <> 
+             <div className='postboard-title'>
+                <h1>Postboard Central</h1>
+            </div>
             <div className='post-buttons'>
                 <button onClick={addPost}>Make Post</button>
             </div>

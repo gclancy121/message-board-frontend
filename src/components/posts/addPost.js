@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import URL from '../../utils/url';
 
+import '../../css/posts/addPost.css';
 function AddPost() {
     const initialPostForm = {
         post_title: '',
@@ -43,11 +44,26 @@ function AddPost() {
             })
         })
     };
+
+    function MessageAndButton() {
+        if (message === '') {
+            return (
+                <></>
+            )
+        }
+        else {
+            return (
+                <div classname='message'>
+                    <h2>{message.message}, click <a className='byway' href='/posts'>here</a> to view it</h2>
+                </div>
+                
+            )
+        }
+    }
+
     return (
-        <>
-            <div className='message'>
-                <h2>{message.message}</h2>
-            </div>
+        <> 
+            <MessageAndButton />
             <div className='add-container'>
                 <form onSubmit={onSubmit}>
                     <div className='header'>

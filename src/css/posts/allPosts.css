@@ -1,0 +1,26 @@
+.post-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+.post-buttons button {
+   font-size: 1.3rem;
+   padding: 0.5%;
+   font-family: Georgia, 'Times New Roman', Times, serif
+}
+.postboard-title {
+    font-family: 'Silkscreen';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-list {
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 10px solid #353434;
+    padding: 1%;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
