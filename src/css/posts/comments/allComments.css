@@ -1,0 +1,13 @@
+.post-holder {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.comments-list {
+    border: 3px solid black;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.comment {
+    background-color: rgb(221, 218, 218);
+}

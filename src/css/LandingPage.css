@@ -7,9 +7,9 @@
 
 /* images */
 .landing-picture {
+    border: 5px solid black;
     width: 250px;
     height: 250px;
-    padding: 1%;
 }
 .images {
     /* border: 1px red solid; */

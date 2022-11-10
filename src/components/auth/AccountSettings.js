@@ -9,8 +9,7 @@ function AccountSettings() {
     const initialProfile = {
        about_me: '',
        fav_waifu: '',
-       profile_picture: '',
-       username: ''
+       profile_picture: ''
     }
 
     const [profile, setProfile] = useState(initialProfile);
@@ -29,14 +28,12 @@ function AccountSettings() {
             const changes = {
                 about_me: profile.about_me,
                 fav_waifu: profile.fav_waifu,
-                profile_picture: profile.profile_picture,
-                username: profile.username
+                profile_picture: profile.profile_picture
             }
             axios.put(`${URL}/users/${id}`, (id, changes)).then(res => {
                 const newProfile = res.data;
                 setProfile(newProfile);
                 setSuccess(true);
-                localStorage.setItem('username', newProfile.username);
             }).catch(err => console.log(err));
     }
     function handleChange(evt) {
@@ -60,6 +57,7 @@ function AccountSettings() {
              <h1>Account Settings</h1>
              <SuccessMessage />
             <form onSubmit={onSubmit}>
+                <button>Submit Changes</button>
                 <div className="setting"> 
                     <h3>About Me</h3>
                     <textarea name="about_me" onChange={handleChange} value={profile.about_me}/>
@@ -73,14 +71,9 @@ function AccountSettings() {
                     <p>Website URL</p>
                     <input type='text' name='profile_picture' onChange={handleChange} value={profile.profile_picture} />
                 </div>
-                <div className="setting">
-                    <h3>Username</h3>
-                    <input type='text' name='username' onChange={handleChange} value={profile.username} />
-                </div>
-                <button>Submit Changes</button>
             </form>
-            <h2>Cancel Changes</h2>
-            <button onClick={cancel}>Cancel & Return</button>
+            <h2>Return</h2>
+            <button onClick={cancel}>Return</button>
         </div>
     )
 }

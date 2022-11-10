@@ -76,7 +76,7 @@ const RegisterForm = () => {
                 </form>
                 <div className="fluff">
                     <h2>Welcome to Weeb Central!</h2>
-                    <p>I'm glad you decided to come and give us a visit. This site is very very janky right now - I know that. I'm working on it.
+                    <p>I'm glad you decided to come and give us a visit. This site is incomplete right now - I know that. I'm working on it.
                         But I'm only one person and I can only do so much in one day - I hope you enjoy my site regardless!
                     </p>
                 </div>

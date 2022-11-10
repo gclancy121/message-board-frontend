@@ -37,6 +37,11 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 11/3/2022
+            <ul>
+                <li>Updating CSS, got a job fair tomorrow and I might have to actually show people this site</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 9/27/2022
             <ul>
                 <li>CSS for the added parts</li>
