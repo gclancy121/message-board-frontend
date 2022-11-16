@@ -41,6 +41,7 @@ function LandingPage () {
             <ul>
                 <li>Continue security improvements from the other day and get the post count working</li>
                 <li>Post count now updates based on number of posts you have</li>
+                <li>Added a random button to post list and the "click here to view your post" button now takes you to that post directly instead to the list of all posts</li>
             </ul>
             <p>Version: Pre-Alpha</p>
             Date: 11/14/2022
