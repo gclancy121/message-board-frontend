@@ -37,6 +37,16 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 11/16/2022
+            <ul>
+                <li>Continue security improvements from the other day and get the post count working</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
+            Date: 11/14/2022
+            <ul>
+                <li>Began looking in to ways to improve site security, current model has a major flaw</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 11/3/2022
             <ul>
                 <li>Updating CSS, got a job fair tomorrow and I might have to actually show people this site</li>

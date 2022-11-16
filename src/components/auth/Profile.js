@@ -10,20 +10,31 @@ const Profile = () => {
     const welcome = localStorage.getItem('message');
     const [profile, setProfile] = useState({});
     const [message, setMessage] = useState('');
+    const [postNum, setPostNum] = useState(5600);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`${URL}/users/${username}`).then(res => {
-            setProfile(res.data);
-        })
+        const fetchData = async () => {
+            const profileData = await axios.get(`${URL}/users/${username}`);
+            const id = profileData.data.user_id;
+            const posts = await axios.get(`${URL}/posts/post-num/${id}`);
+            setProfile(profileData.data);
+            setPostNum(posts.data.user_post_num)
+        }
+        // axios.get(`${URL}/users/${username}`).then(res => {
+        //     setProfile(res.data);
+        //     setId(res.data.user_id);
+        // })
+        fetchData();
         setMessage(welcome);
         localStorage.removeItem('message');
     }, []);
     
+    
     function logout() {
         localStorage.clear();
-        window.location.reload();
+        navigate('/login');
     };
     
     function settings() {
@@ -45,7 +56,7 @@ const Profile = () => {
                     <h3>Username: </h3><p>{username}</p>
                 </div> 
                 <div className='profile-center'>
-                    <h3>Post Count: </h3> 0
+                    <h3>Post Count: </h3> {postNum}
                     <h3>Favorite Waifu: </h3> {profile.fav_waifu}
                 </div>
                 <div className='profile-right'>
