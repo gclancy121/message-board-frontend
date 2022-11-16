@@ -22,10 +22,6 @@ const Profile = () => {
             setProfile(profileData.data);
             setPostNum(posts.data.user_post_num)
         }
-        // axios.get(`${URL}/users/${username}`).then(res => {
-        //     setProfile(res.data);
-        //     setId(res.data.user_id);
-        // })
         fetchData();
         setMessage(welcome);
         localStorage.removeItem('message');
@@ -43,7 +39,6 @@ const Profile = () => {
     function posts() {
         navigate(`/posts`);
     };
-    //replace hard coded posts when DB created
     return (
         <>
             <div className='welcome-message'>

@@ -12,6 +12,7 @@ function AddPost() {
     const [post, setPost] = useState(initialPostForm);
     const [message, setMessage] = useState('');
     const [id, setId] = useState(0);
+    const [postId, setPostId] = useState(0);
 
     useEffect(() => {
         const username = localStorage.getItem('username');
@@ -34,6 +35,7 @@ function AddPost() {
             post_body: post.post_body
         }
         axios.post(`${URL}/posts/addpost`, newPost).then(res => {
+            setPostId(res.data.post_info.post_id);
             setMessage({
                 message: res.data.message
             });
@@ -44,7 +46,6 @@ function AddPost() {
             })
         })
     };
-
     function MessageAndButton() {
         if (message === '') {
             return (
@@ -53,8 +54,8 @@ function AddPost() {
         }
         else {
             return (
-                <div classname='message'>
-                    <h2>{message.message}, click <a className='byway' href='/posts'>here</a> to view it</h2>
+                <div className='message'>
+                    <h2>{message.message}, click <a className='byway' href={`/posts/${postId}`}>here</a> to view it</h2>
                 </div>
                 
             )

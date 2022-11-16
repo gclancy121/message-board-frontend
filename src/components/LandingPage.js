@@ -40,6 +40,7 @@ function LandingPage () {
             Date: 11/16/2022
             <ul>
                 <li>Continue security improvements from the other day and get the post count working</li>
+                <li>Post count now updates based on number of posts you have</li>
             </ul>
             <p>Version: Pre-Alpha</p>
             Date: 11/14/2022
