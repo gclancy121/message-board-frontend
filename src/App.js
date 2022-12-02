@@ -27,6 +27,7 @@ import AddPost from './components/posts/addPost';
 //Registration & Login
 import LoginForm from './components/auth/Login';
 import RegisterForm from './components/auth/Register';
+import PasswordReset from './components/auth/PasswordReset';
 
 //Landing Pages & Header
 import SiteHeader from './components/SiteHeader';
@@ -47,6 +48,7 @@ const App = () => {
           <Route path='*' element={<PageEmpty />} />
           <Route path='/' element={<LandingPage/>} />
           <Route path='/login' element={<LoginForm/>} />
+          <Route path='/password-reset' element={<PasswordReset />} />
           <Route path='/register' element={<RegisterForm/>} />
           <Route path='/complaints' element={<Complaint />} />
           <Route element={<PrivateRoutes />}>
