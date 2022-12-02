@@ -76,6 +76,7 @@ const LoginForm = () => {
                     </div>
                     <div className="links">
                         <p>Not yet registered? Register <Link to='/register'>here.</Link></p>
+                        <p>Forgot password? Click <Link to='/password-reset'>here</Link> to reset it.</p>
                     </div>
                 </form>
             </div>
