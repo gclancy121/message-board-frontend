@@ -28,6 +28,7 @@ import AddPost from './components/posts/addPost';
 import LoginForm from './components/auth/Login';
 import RegisterForm from './components/auth/Register';
 import PasswordReset from './components/auth/PasswordReset';
+import PasswordReset2 from './components/auth/PasswordReset2';
 
 //Landing Pages & Header
 import SiteHeader from './components/SiteHeader';
@@ -49,6 +50,7 @@ const App = () => {
           <Route path='/' element={<LandingPage/>} />
           <Route path='/login' element={<LoginForm/>} />
           <Route path='/password-reset' element={<PasswordReset />} />
+          <Route path='/password-reset-2' exact element={<PasswordReset2 />} />
           <Route path='/register' element={<RegisterForm/>} />
           <Route path='/complaints' element={<Complaint />} />
           <Route element={<PrivateRoutes />}>

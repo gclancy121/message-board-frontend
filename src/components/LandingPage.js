@@ -44,6 +44,7 @@ function LandingPage () {
                 <li>Showed the website to a recruiter for a company, they gave me some ideas to work on</li>
                 <li>Going to start implementing password reset</li>
                 <li>Implemented security questions for the sake of verifying identity in password reset</li>
+                <li>Implemented verification of identity for password reset, next is actually allowing a password reset</li>
             </ul>
             <p>Version: Pre-Alpha</p>
             Date: 11/16/2022
