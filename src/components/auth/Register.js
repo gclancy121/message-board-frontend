@@ -8,6 +8,8 @@ const RegisterForm = () => {
     const initialRegisterForm = {
         username: '',
         password: '',
+        security_question: '',
+        security_question_answer: '',
         message: ''
     }
     const [register, setRegister] = useState(initialRegisterForm);
@@ -24,7 +26,9 @@ const RegisterForm = () => {
         evt.preventDefault();
         const newUser = {
             username: register.username,
-            password: register.password
+            password: register.password,
+            security_question: register.security_question,
+            security_question_answer: register.security_question_answer
         }
         axios.post(`${URL}/users/register`, newUser).then(res => {
            setRegister({
@@ -66,6 +70,21 @@ const RegisterForm = () => {
                     <div className="form-group">
                         <label>Password </label>
                         <input type='password' name='password' id='password-register' value={register.password} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Security Question: </label>
+                        <select value={register.security_question} name="security_question" onChange={handleChange}>
+                            <option value=''>---Select a Question---</option>
+                            <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                            <option value="What street did you grow up on?">What street did you grow up on?</option>
+                            <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                            <option value="What high school did you attend?">What high school did you attend?</option>
+                            <option value="What year was your father (or mother) born?">What year was your father (or mother) born?</option>
+                            <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                            <option value="What was the model of your first car?">What was the model of your first car?</option>
+                            <option value="What city did you meet your spouse/significant other in?">What city did you meet your spouse/significant other in?</option>
+                        </select>
+                        <input type='text' name="security_question_answer" onChange={handleChange} />
                     </div>
                     <div className="submit">
                         <input type='submit' id='submit-button' />

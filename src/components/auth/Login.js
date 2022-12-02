@@ -74,7 +74,7 @@ const LoginForm = () => {
                     <div className="submit">
                         <input type='submit' id='submit-button' />
                     </div>
-                    <div className="register-link">
+                    <div className="links">
                         <p>Not yet registered? Register <Link to='/register'>here.</Link></p>
                     </div>
                 </form>

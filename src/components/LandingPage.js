@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import '../css/LandingPage.css'
-
+//add the ability to add users as friends?
+//add password reset function
+//add account deletion
 function LandingPage () {
     return (
     <div id="landing-container">
@@ -36,6 +38,12 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
+            <p>Version: Pre-Alpha</p>
+            Date: 12/2/2022
+            <ul>
+                <li>Showed the website to a recruiter for a company, they gave me some ideas to work on</li>
+                <li>Going to start implementing password reset</li>
+            </ul>
             <p>Version: Pre-Alpha</p>
             Date: 11/16/2022
             <ul>
