@@ -14,6 +14,7 @@ function AccountSettings() {
 
     const [profile, setProfile] = useState(initialProfile);
     const [success, setSuccess] = useState(false);
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -34,13 +35,22 @@ function AccountSettings() {
                 const newProfile = res.data;
                 setProfile(newProfile);
                 setSuccess(true);
-            }).catch(err => console.log(err));
+            }).catch(err => {
+                setMessage(err.response.data.message);
+            });
     }
     function handleChange(evt) {
         setProfile({
             ...profile,
             [evt.target.name]: evt.target.value
         })
+    }
+    function ErrorMessage() {
+        if (message === '') {
+            return <></>
+        } else {
+            return <h3>{message}</h3>
+        }
     }
     function SuccessMessage() {
         if (success) {
@@ -56,6 +66,7 @@ function AccountSettings() {
         <div className='settings-container'>
              <h1>Account Settings</h1>
              <SuccessMessage />
+             <ErrorMessage />
             <form onSubmit={onSubmit}>
                 <button>Submit Changes</button>
                 <div className="setting"> 
