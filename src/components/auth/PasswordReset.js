@@ -23,6 +23,8 @@ function PasswordReset() {
         }
        axios.post(`${URL}/users/reset-checks`, data).then(result => {
         setPassed(true);
+        setFormData(initialFormData);
+        localStorage.setItem('user_id', result.data.id);
        }).catch(err => {
         setFormData({
             ...formData,

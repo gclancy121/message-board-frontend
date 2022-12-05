@@ -38,6 +38,12 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
+        <p>Version: Pre-Alpha</p>
+            Date: 12/5/2022
+            <ul>
+                <li>Added some input auth for updating user account settings, should have been done a long time ago</li>
+                <li>Added the password reset functionality</li>
+            </ul>
             <p>Version: Pre-Alpha</p>
             Date: 12/2/2022
             <ul>
