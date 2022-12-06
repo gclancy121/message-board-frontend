@@ -11,6 +11,7 @@ import PrivateRoutes from './utils/PrivateRoutes';
 //Profile related routes
 import Profile from './components/auth/Profile';
 import AccountSettings from './components/auth/AccountSettings';
+import AccountDeletion from './components/auth/AccountDeletion';
 
 //Waifu related routes
 import AllWaifus from './components/waifus/allWaifus';
@@ -60,6 +61,7 @@ const App = () => {
             <Route element={<Profile />} path='/profile'/>
             <Route element={<AllWaifus />} path='/waifus' exact/>
             <Route element={<AccountSettings />} path='/settings' />
+            <Route element={<AccountDeletion />} path='/confirm-deletion' />
             <Route element={<UpdateWaifu />} path='waifus/update-waifu' />
             <Route element={<AddWaifu />} path='/waifus/add-waifu' />
             <Route element={<AdditionalInfo />} path='/waifus/id=:id' />

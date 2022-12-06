@@ -59,6 +59,9 @@ function AccountSettings() {
             return <></>
         }
     }
+    function deleteAccount() {
+        navigate('/confirm-deletion');
+    }
     function cancel() {
         navigate('/profile');
     }
@@ -85,6 +88,8 @@ function AccountSettings() {
             </form>
             <h2>Return</h2>
             <button onClick={cancel}>Return</button>
+            <h2>Delete Account</h2>
+            <button onClick={deleteAccount}>Delete Account</button>
         </div>
     )
 }
