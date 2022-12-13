@@ -44,7 +44,6 @@ function AllComments(props) {
             comment_created_by: userId
         }
         axios.post(`${URL}/comments`, newComment).then(res => {
-            console.log(res.data);
             setComment(initialCommentText);
             location.reload();
         }).catch(err => {

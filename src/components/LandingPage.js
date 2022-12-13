@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 
 import '../css/LandingPage.css'
 //add the ability to add users as friends?
-//add account deletion
 function LandingPage () {
     return (
     <div id="landing-container">

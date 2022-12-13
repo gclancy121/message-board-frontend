@@ -31,7 +31,6 @@ function AccountDeletion() {
         }).catch(err => {
             setMessage(err.response.data.message);
         })
-        //alert('too bad, not working yet assclown');
     }
 
         function Success() {

@@ -11,14 +11,8 @@ const PrivateRoutes = ({children, ...rest}) => {
         )
     } else {
         const decoded = jwt_decode(token);
-        // console.log(decoded);
         const decodedTime = decoded.exp*999.95;
-        const decodedExpire = new Date(decodedTime);
-        console.log("expires at: "+decodedExpire);
-
         const currentTime = new Date().getTime();
-        const currentDate = new Date(time);
-        console.log("current time: " + currentDate.toString());
         
         if (decodedTime > currentTime) {
             return (
