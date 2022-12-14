@@ -37,6 +37,11 @@ function LandingPage () {
         </div>
         <div className='changelog'>
         <p>Version: Pre-Alpha</p>
+            Date: 12/14/2022
+            <ul>
+                <li>Time to implement Redux, this'll be ongoing over the rest of the week</li>
+            </ul>
+        <p>Version: Pre-Alpha</p>
             Date: 12/5/2022
             <ul>
                 <li>Gonna work on account deletion</li>
