@@ -1,9 +1,11 @@
 import {Outlet, Navigate} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 
+function clear() {
+    localStorage.clear();
+}
+
 const PrivateRoutes = ({children, ...rest}) => {
-    let auth = {'auth': false};
-    const time = Date.now()
     const token = localStorage.getItem('authorization');
     if (token == null) {
         return (
@@ -21,7 +23,7 @@ const PrivateRoutes = ({children, ...rest}) => {
         } else {
             return (
                 <div>
-                    Auth token expired. Click <a href="/login">here</a> to log in again.
+                    Auth token expired. Click <a href="/login" onClick={clear}>here</a> to log in again.
                 </div>
             )
         }
