@@ -1,46 +1,37 @@
-import axios from 'axios';
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import URL from '../../utils/url';
-
+import {connect} from 'react-redux';
+import * as actions from '../../actions/account-actions';
 
 import '../../css/auth/Login.css'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+    console.log(props);
     const initialLoginForm = {
         username: '',
-        password: '',
-        error: ''
+        password: ''
     }
-    const [login, setLogin] = useState(initialLoginForm);
+    const {loginInfo, login, error} = props;
+    const [loginForm, setLoginForm] = useState(initialLoginForm);
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleChange = evt => {
-        setLogin({
-            ...login,
+        setLoginForm({
+            ...loginForm,
             [evt.target.name]: evt.target.value
         });
     }
     const onSubmit = evt => {
         evt.preventDefault();
         const newForm = {
-            username: login.username,
-            password: login.password
+            username: loginForm.username,
+            password: loginForm.password
         }
-       axios.post(`${URL}/users/login`, newForm).then(res => {
-        const data = res.data
-        localStorage.setItem('username', newForm.username);
-        localStorage.setItem('authorization', data.token);
-        localStorage.setItem('message', data.message);
-        setLogin(initialLoginForm);
+        login(newForm);
+        localStorage.setItem('authorization', loginInfo.token);
+        localStorage.setItem('message', loginInfo.message);
+        setLoginForm(initialLoginForm);
         setLoggedIn(true);
-        }).catch(err => {
-            const error = err.response.data.message;
-            setLogin({
-                ...login,
-                error: error
-            })
-        })
     }
 
     function LoggedInButton() {
@@ -65,11 +56,11 @@ const LoginForm = () => {
                     </div>
                     <div className="form-group">
                         <label id='username-text'>Username </label>
-                        <input type='text' id='username-login' name='username' value={login.username} onChange={handleChange}/>
+                        <input type='text' id='username-login' name='username' value={loginForm.username} onChange={handleChange}/>
                     </div>
                     <div className="form-group">
                         <label>Password </label>
-                        <input type='password' id='password-login' name='password' value={login.password} onChange={handleChange}/>
+                        <input type='password' id='password-login' name='password' value={loginForm.password} onChange={handleChange}/>
                     </div>
                     <div className="submit">
                         <input type='submit' id='submit-button' />
@@ -92,4 +83,4 @@ const LoginForm = () => {
    )
 }
 
-export default LoginForm;
+export default connect(st => st, actions)(LoginForm);

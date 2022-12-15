@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import URL from '../utils/url';
 
+
 export function fetchAccount(username) {
     return function(dispatch) {
         axios.get(`${URL}/users/${username}`).then(res => {
@@ -22,7 +23,9 @@ export function fetchAccount(username) {
 export function login(payload) {
     return function(dispatch) {
         axios.post(`${URL}/users/login`, payload).then(res => {
-            console.log(res);
+            dispatch({type: types.LOGIN, payload: res.data})
+        }).catch(err => {
+            dispatch({type: types.ERROR, payload: err})
         })
     }
 }

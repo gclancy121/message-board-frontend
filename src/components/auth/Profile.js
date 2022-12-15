@@ -1,11 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/account-actions'
-
-import URL from '../../utils/url';
-
 
 import "../../css/Profile.css";
 const Profile = (props) => {
@@ -18,13 +14,6 @@ const Profile = (props) => {
     
 
     useEffect(() => {
-        // const fetchData = async () => {
-        //     const profileData = await axios.get(`${URL}/users/${username}`);
-        //     const id = profileData.data.user_id;
-        //     const posts = await axios.get(`${URL}/posts/post-num/${id}`);
-        //     setProfile(profileData.data);
-        //     setPostNum(posts.data.user_post_num)
-        // }
         setMessage(welcome);
         localStorage.removeItem('message');
         fetchAccount('SachiKing');

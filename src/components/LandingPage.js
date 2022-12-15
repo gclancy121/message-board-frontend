@@ -36,18 +36,23 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
-        <p>Version: Pre-Alpha</p>
+            <p>Version: Pre-Alpha</p>
+            Date: 12/15/2022
+            <ul>
+                <li>Continuing redux implementation, website is essentially broken until it's done</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 12/14/2022
             <ul>
                 <li>Time to implement Redux, this'll be ongoing over the rest of the week</li>
             </ul>
-        <p>Version: Pre-Alpha</p>
+            <p>Version: Pre-Alpha</p>
             Date: 12/5/2022
             <ul>
                 <li>Gonna work on account deletion</li>
                 <li>Finally added account deletion page</li>
             </ul>
-        <p>Version: Pre-Alpha</p>
+            <p>Version: Pre-Alpha</p>
             Date: 12/5/2022
             <ul>
                 <li>Added some input auth for updating user account settings, should have been done a long time ago</li>
