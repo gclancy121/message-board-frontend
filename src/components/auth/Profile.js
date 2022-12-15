@@ -1,30 +1,33 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import * as actions from '../../actions/account-actions'
+
 import URL from '../../utils/url';
 
 
 import "../../css/Profile.css";
-const Profile = () => {
-    const username = localStorage.getItem('username');
+const Profile = (props) => {
+    const {user, fetchAccount} = props;
     const welcome = localStorage.getItem('message');
-    const [profile, setProfile] = useState({});
     const [message, setMessage] = useState('');
-    const [postNum, setPostNum] = useState(5600);
+    const [postNum, setPostNum] = useState(-2);
 
     const navigate = useNavigate();
+    
 
     useEffect(() => {
-        const fetchData = async () => {
-            const profileData = await axios.get(`${URL}/users/${username}`);
-            const id = profileData.data.user_id;
-            const posts = await axios.get(`${URL}/posts/post-num/${id}`);
-            setProfile(profileData.data);
-            setPostNum(posts.data.user_post_num)
-        }
-        fetchData();
+        // const fetchData = async () => {
+        //     const profileData = await axios.get(`${URL}/users/${username}`);
+        //     const id = profileData.data.user_id;
+        //     const posts = await axios.get(`${URL}/posts/post-num/${id}`);
+        //     setProfile(profileData.data);
+        //     setPostNum(posts.data.user_post_num)
+        // }
         setMessage(welcome);
         localStorage.removeItem('message');
+        fetchAccount('SachiKing');
     }, []);
     
     
@@ -47,15 +50,15 @@ const Profile = () => {
             <div className="container">
                 <div className='profile-left'>
                     <h3>About Me</h3>
-                    <img id="profile-picture" src={profile.profile_picture}/>
-                    <h3>Username: </h3><p>{username}</p>
+                    <img id="profile-picture" src={user.profile_picture}/>
+                    <h3>Username: </h3><p>{user.username}</p>
                 </div> 
                 <div className='profile-center'>
                     <h3>Post Count: </h3> {postNum}
-                    <h3>Favorite Waifu: </h3> {profile.fav_waifu}
+                    <h3>Favorite Waifu: </h3> {user.fav_waifu}
                 </div>
                 <div className='profile-right'>
-                    <h3>About Me:</h3> {profile.about_me}
+                    <h3>About Me:</h3> {user.about_me}
                 </div>
                 <div className='buttons'>
                     <button onClick={logout}>Logout</button>
@@ -70,4 +73,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default connect(st => st, actions)(Profile);

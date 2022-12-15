@@ -7,7 +7,7 @@ export function fetchAccount(username) {
     return function(dispatch) {
         axios.get(`${URL}/users/${username}`).then(res => {
             if (res !== null) {
-                dispatch({type: types.GET_ACCOUNT, payload: res});
+                dispatch({type: types.GET_ACCOUNT, payload: res.data});
             }
             else {
                 const onFail=[{message: "User does not exist"}]
@@ -15,6 +15,14 @@ export function fetchAccount(username) {
             }
         }).catch(err => {
             console.log(err);
+        })
+    }
+}
+
+export function login(payload) {
+    return function(dispatch) {
+        axios.post(`${URL}/users/login`, payload).then(res => {
+            console.log(res);
         })
     }
 }

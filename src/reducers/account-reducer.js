@@ -1,6 +1,6 @@
 import * as types from '../actions/account-action-types'
 
-const initialProfile = {user: []}
+const initialProfile = {user: {}}
 
 function usersReducer(userState=initialProfile, action) {
     switch(action.type) {
