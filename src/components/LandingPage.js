@@ -37,6 +37,13 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 12/16/2022
+            <ul>
+                <li>Redux isn't working, I have an idea</li>
+                <li>Deleted redux, it wouldn't work like I needed it to so I built my own state containers</li>
+                <li>Slowly going through and fixing everything, will fix the reload issue later</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 12/15/2022
             <ul>
                 <li>Continuing redux implementation, website is essentially broken until it's done</li>

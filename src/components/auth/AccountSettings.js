@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { fetchUsername } from '../../state/profileState';
 import axios from 'axios';
 import URL from '../../utils/url';
 
 import '../../css/auth/AccountSettings.css';
 function AccountSettings() {
-    const username = localStorage.getItem('username');
+    const username = fetchUsername();
     const initialProfile = {
        about_me: '',
        fav_waifu: '',

@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { fetchUserId } from '../../state/profileState';
 
 import URL from '../../utils/url';
 
@@ -15,11 +17,7 @@ function AddPost() {
     const [postId, setPostId] = useState(0);
 
     useEffect(() => {
-        const username = localStorage.getItem('username');
-        axios.get(`${URL}/users/${username}`).then(res => {
-            const string = res.data.user_id;
-            setId(parseInt(string));
-        })
+       setId(fetchUserId());
     }, [])
     const handleChange = evt => {
         setPost({
@@ -55,7 +53,7 @@ function AddPost() {
         else {
             return (
                 <div className='message'>
-                    <h2>{message.message}, click <a className='byway' href={`/posts/${postId}`}>here</a> to view it</h2>
+                    <h2>{message.message}, click <Link className='byway' to={`/posts/${postId}`}>here</Link> to view it</h2>
                 </div>
                 
             )

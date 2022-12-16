@@ -1,17 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import * as actions from '../../actions/account-actions';
+
+import axios from 'axios';
+import URL from '../../utils/url';
+import {setUsername} from '../../state/profileState';
 
 import '../../css/auth/Login.css'
 
-const LoginForm = (props) => {
-    console.log(props);
+
+const LoginForm = () => {
     const initialLoginForm = {
         username: '',
-        password: ''
+        password: '',
+        error: ''
     }
-    const {loginInfo, login, error} = props;
     const [loginForm, setLoginForm] = useState(initialLoginForm);
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -27,11 +29,12 @@ const LoginForm = (props) => {
             username: loginForm.username,
             password: loginForm.password
         }
-        login(newForm);
-        localStorage.setItem('authorization', loginInfo.token);
-        localStorage.setItem('message', loginInfo.message);
-        setLoginForm(initialLoginForm);
-        setLoggedIn(true);
+        axios.post(`${URL}/users/login`, newForm).then(res => {
+            setUsername(res.data.username);
+            localStorage.setItem('authorization', res.data.token);
+            localStorage.setItem('message', res.data.message);
+            setLoggedIn(true);
+        })
     }
 
     function LoggedInButton() {
@@ -45,7 +48,7 @@ const LoginForm = (props) => {
    return (
     <> 
         <div className='error'>
-            <h2>{login.error}</h2>
+            <h2>{loginForm.error}</h2>
             <LoggedInButton />
         </div>
         <div className="login-container">
@@ -83,4 +86,4 @@ const LoginForm = (props) => {
    )
 }
 
-export default connect(st => st, actions)(LoginForm);
+export default LoginForm;

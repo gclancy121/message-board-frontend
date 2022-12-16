@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../../actions/account-actions'
+import axios from 'axios';
+import URL from '../../utils/url';
+
+import { fetchUsername,setUserId, fetchUserId } from '../../state/profileState';
 
 import "../../css/Profile.css";
-const Profile = (props) => {
-    const {user, fetchAccount} = props;
+
+const Profile = () => {
     const welcome = localStorage.getItem('message');
+    const [user, setUser] = useState({});
     const [message, setMessage] = useState('');
     const [postNum, setPostNum] = useState(-2);
 
@@ -16,7 +19,17 @@ const Profile = (props) => {
     useEffect(() => {
         setMessage(welcome);
         localStorage.removeItem('message');
-        fetchAccount('SachiKing');
+        const profile = fetchUsername();
+        axios.get(`${URL}/users/${profile}`).then(res => {
+            setUser(res.data);
+            setUserId(res.data.user_id);
+        }).catch(err => {
+            console.log(err);
+        })
+        const id = fetchUserId();
+        axios.get(`${URL}/posts/post-num/${id}`).then(res => {
+            setPostNum(res.data.user_post_num);
+        })
     }, []);
     
     
@@ -62,4 +75,4 @@ const Profile = (props) => {
     )
 }
 
-export default connect(st => st, actions)(Profile);
+export default Profile;
