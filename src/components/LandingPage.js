@@ -37,6 +37,12 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Pre-Alpha</p>
+            Date: 12/19/2022
+            <ul>
+                <li>Did a few final updates to the internal state storage mechanism</li>
+                <li>Will keep looking for ways to solve the reload issue, probably signing off for the holidays</li>
+            </ul>
+            <p>Version: Pre-Alpha</p>
             Date: 12/16/2022
             <ul>
                 <li>Redux isn't working, I have an idea</li>
