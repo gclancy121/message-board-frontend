@@ -1,20 +1,19 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { fetchUserId } from "../../state/profileState";
 
 import URL from "../../utils/url";
 
 function AccountDeletion() {
     const navigate = useNavigate();
-    const username = localStorage.getItem('username');
     const [id, setId] = useState(0);
     const [success, setSuccess] = useState(false);
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        axios.get(`${URL}/users/${username}`).then(res => {
-            setId(res.data.user_id);
-        })
+        const id = fetchUserId();
+        setId(id);
     }, [])
     function cancel() {
         navigate('/settings');

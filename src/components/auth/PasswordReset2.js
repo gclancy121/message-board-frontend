@@ -59,7 +59,7 @@ function PasswordReset2() {
                 <ResetLogin />
                 <label>New Password: </label>
                 <input type='password' name='password' value={formData.password} onChange={onChange} />
-                <label>Conform New Password: </label>
+                <label>Confirm New Password: </label>
                 <input type='password' name='newPassword' value={formData.newPassword} onChange={onChange} />
                 <input type='submit' />
             </form>
