@@ -8,6 +8,8 @@ import {setUsername} from '../../state/profileState';
 import '../../css/auth/Login.css'
 
 
+//LOOK INTO DELAYING THE REACT, NOT THE REDUX - COULD BE A POTENTIAL FIX?
+
 const LoginForm = () => {
     const initialLoginForm = {
         username: '',

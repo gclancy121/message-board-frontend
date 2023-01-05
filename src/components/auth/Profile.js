@@ -23,13 +23,16 @@ const Profile = () => {
         axios.get(`${URL}/users/${profile}`).then(res => {
             setUser(res.data);
             setUserId(res.data.user_id);
+            const id = fetchUserId();
+            axios.get(`${URL}/posts/post-num/${id}`).then(res => {
+                setPostNum(res.data.user_post_num);
+            }).catch(err => {
+                console.log(err);
+            })
         }).catch(err => {
             console.log(err);
         })
-        const id = fetchUserId();
-        axios.get(`${URL}/posts/post-num/${id}`).then(res => {
-            setPostNum(res.data.user_post_num);
-        })
+        
     }, []);
     
     

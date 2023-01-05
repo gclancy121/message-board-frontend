@@ -36,6 +36,11 @@ function LandingPage () {
             <h4>Most recent changes:</h4>
         </div>
         <div className='changelog'>
+            <p>Version: Alpha</p>
+            Date: 1/5/2023
+            <ul>
+                <li>I guess this is complete enough to make it the Alpha version - still not perfect but I've kinda run out of ideas for now.</li>
+            </ul>
             <p>Version: Pre-Alpha</p>
             Date: 12/19/2022
             <ul>
