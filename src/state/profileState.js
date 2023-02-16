@@ -1,3 +1,5 @@
+//Replace this with redux soon. Roles first.
+
 const profile = {
     username: '',
     user_id: -1

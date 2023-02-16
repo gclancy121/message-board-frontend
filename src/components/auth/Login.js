@@ -32,7 +32,7 @@ const LoginForm = () => {
             password: loginForm.password
         }
         axios.post(`${URL}/users/login`, newForm).then(res => {
-            setUsername(res.data.username);
+            setUsername(newForm.username);
             localStorage.setItem('authorization', res.data.token);
             localStorage.setItem('message', res.data.message);
             setLoggedIn(true);

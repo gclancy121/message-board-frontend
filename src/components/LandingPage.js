@@ -37,6 +37,16 @@ function LandingPage () {
         </div>
         <div className='changelog'>
             <p>Version: Alpha</p>
+            Date: 2/15/2023
+            <ul>
+                <li>Migrated backend to Typescript. </li>
+            </ul>
+            <p>Version: Alpha</p>
+            Date: 1/18/2023
+            <ul>
+                <li>I had an idea - add roles to determine what is accessible. That, and implement Redux.</li>
+            </ul>
+            <p>Version: Alpha</p>
             Date: 1/5/2023
             <ul>
                 <li>I guess this is complete enough to make it the Alpha version - still not perfect but I've kinda run out of ideas for now.</li>

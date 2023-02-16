@@ -5,9 +5,11 @@ import axios from "axios";
 import Comment from "./Comment";
 import "../../../css/posts/comments/allComments.css";
 
+import { fetchUsername } from "../../../state/profileState";
+
 function AllComments(props) {
     const {id} = props;
-    const username = localStorage.getItem("username");
+    const username = fetchUsername();
 
     const initialCommentText = {
         comment: ''
@@ -19,7 +21,7 @@ function AllComments(props) {
 
     useEffect(() => {
         axios.get(`${URL}/users/${username}`).then(res => {
-            setUserId(res.data.user_id);
+            setUserId(res.data[0].user_id);
         }).catch(err => {
             console.log(err);
         })
@@ -43,6 +45,7 @@ function AllComments(props) {
             post_id: id,
             comment_created_by: userId
         }
+        console.log(newComment);
         axios.post(`${URL}/comments`, newComment).then(res => {
             setComment(initialCommentText);
             location.reload();
